@@ -1,0 +1,223 @@
+================================================================================
+                           FITDAILY - USER WALKTHROUGH GUIDE
+================================================================================
+
+Welcome to FitDaily!
+
+FitDaily is a clean, mobile-first daily fitness planner and habit tracking web 
+app. It is designed around the simplicity of a daily to-do checklist:
+
+  [Open App]  -->  [See Today's Plan]  -->  [Check Items Off]  -->  [Build Streaks]
+
+FitDaily strips away the noise: no calorie counting, no complex workout 
+builders, and no wearable syncing. It gives you a fast, elegant way to stay 
+consistent with your daily fitness routines.
+
+--------------------------------------------------------------------------------
+1. MAIN NAVIGATION
+--------------------------------------------------------------------------------
+FitDaily uses a clean bottom navigation bar with four main sections:
+
+  [ Today ]       Your primary landing page and daily activity checklist.
+  [ Calendar ]    Monthly consistency view with color-coded daily status.
+  [ Progress ]    Streak tracker, 7-day completion chart, and total stats.
+  [ Settings ]    Name, daily goal percentage, light/dark mode, and data reset.
+
+--------------------------------------------------------------------------------
+2. ONBOARDING (FIRST-TIME SETUP)
+--------------------------------------------------------------------------------
+When you launch FitDaily for the first time, a 3-step setup guides you:
+
+  Step 1: Your Name
+    Enter what the app should call you (e.g., Alex).
+
+  Step 2: Habits to Track
+    Select the activities you want in your daily plan:
+    - Walking
+    - Running
+    - Workouts
+    - Stretching
+    - Water (Hydration)
+    - Meditation
+    - Sleep
+
+  Step 3: Daily Goal
+    Select your target completion percentage (60%, 70%, 80%, 90%, or 100%).
+    Default is 80%.
+
+  Note: You can tap "Skip" in the top-right corner anytime to jump straight in
+  with standard starter activities.
+
+--------------------------------------------------------------------------------
+3. TODAY PAGE (YOUR DAILY COMMAND CENTER)
+--------------------------------------------------------------------------------
+The Today page is your default dashboard:
+
+- Header:
+  Displays today's date (e.g., "Monday, September 21"), a personalized greeting
+  ("Good evening, Alex!"), and your active streak badge.
+
+- Progress Card:
+  - Circular Progress Ring: Animated SVG ring showing your exact completion %.
+  - Counter: Shows "X of Y completed" (e.g., 4 of 5 completed).
+  - Goal Reached Badge: An energetic green badge lights up when you hit your
+    daily goal (e.g., 80%).
+
+- Activity Checklist:
+  - Large, easy-to-tap checkbox next to each activity.
+  - Tapping an item marks it completed instantly, plays subtle feedback,
+    and updates your progress bar without leaving the screen.
+  - Shows activity category tag, target (e.g., "30 Minutes", "2 Liters"),
+    and optional reminder time (e.g., "07:30 AM").
+  - Hover or swipe to see the delete icon to remove an unwanted activity.
+
+- Floating "+ Add Activity" Button:
+  A prominent green button at the bottom for easy one-handed thumb reach.
+
+- Empty State:
+  If no activities are scheduled for today, a friendly prompt invites you
+  to add your first activity.
+
+--------------------------------------------------------------------------------
+4. ADDING CUSTOM & RECURRING ACTIVITIES
+--------------------------------------------------------------------------------
+Tap the "+ Add Activity" button to open the activity creator:
+
+- Activity Name:
+  e.g., "Morning Walk", "Core Circuit", "Drink Water".
+
+- Category:
+  Choose from: Workout, Walking, Running, Stretching, Hydration, Recovery,
+  Meditation, or Other.
+
+- Target & Unit:
+  Enter any amount and select its unit:
+  Units include: Minutes, Hours, Liters, Glasses, Miles, Kilometers, Steps,
+  Reps, Sets, Times.
+
+- Recurrence Rules:
+  - "Every day": Appears on your checklist 7 days a week.
+  - "Weekdays": Automatically schedules for Monday through Friday.
+  - "Custom days": Select any specific combination of days (e.g., Mon/Wed/Fri).
+  - "Once": Only scheduled for today.
+
+- Optional Reminder Time:
+  Add a reminder time (e.g., 07:30 AM).
+
+- Optional Notes:
+  Add helpful notes (e.g., "Bring resistance band").
+
+--------------------------------------------------------------------------------
+5. CALENDAR PAGE (MONTHLY CONSISTENCY OVERVIEW)
+--------------------------------------------------------------------------------
+The Calendar gives you an at-a-glance view of your consistency over time:
+
+- Monthly Grid:
+  Navigate previous and next months with the arrow buttons, or tap "Today"
+  to return to the current month.
+
+- Consistency Dots:
+  - Green Dot  : Daily goal achieved (completed at least your daily goal %).
+  - Orange Dot : Partially completed (made progress, but below goal).
+  - Gray Dot   : Incomplete or rest day.
+  - Border Ring: Highlights today's date.
+
+- Day Drill-Down:
+  Tap any date on the calendar to view the exact activities scheduled for
+  that day and check/uncheck them in real time.
+
+--------------------------------------------------------------------------------
+6. PROGRESS PAGE (ANALYTICS & MOTIVATION)
+--------------------------------------------------------------------------------
+A clean, motivating metrics page:
+
+- Key Metrics:
+  - Current Day Streak: Consecutive days reaching your daily goal.
+  - Past 7 Days: Overall weekly task completion percentage.
+  - Completed Tasks: Lifetime total of activities checked off.
+  - Workouts Done: Lifetime total of workouts and runs completed.
+
+- 7-Day Activity Rate Chart:
+  A visual column bar chart showing your completion rate for each of the
+  past 7 days, highlighting days that met your daily target line.
+
+--------------------------------------------------------------------------------
+7. SETTINGS PAGE (CUSTOMIZATION & DATA)
+--------------------------------------------------------------------------------
+- Profile:
+  Change your display name anytime.
+
+- Daily Goal Target:
+  Choose your goal: 60%, 70%, 80%, 90%, or 100% (default: 80%).
+
+- Appearance:
+  Switch between Light Mode, Dark Mode, or System Default.
+
+- Activity Reminders:
+  Toggle browser notifications for scheduled reminder times.
+
+- Data Management:
+  - Restart Onboarding: Run the setup wizard again.
+  - Reset Completion History: Clears checkmarks and resets streak, keeping
+    your scheduled activity templates.
+  - Clear All Activities: Completely erases all activities and data
+    (protected by a confirmation dialog).
+
+--------------------------------------------------------------------------------
+8. HOW THE STREAK SYSTEM WORKS
+--------------------------------------------------------------------------------
+1. Each day with scheduled activities has a completion target (default 80%).
+2. For example, if 5 activities are scheduled:
+   - 4 completed (80%) -> Streak count increases by 1!
+   - 3 completed (60%) -> Day goal not met; streak pauses until completed.
+3. Rest days (0 scheduled activities) do NOT penalize or break your streak.
+4. If you miss a scheduled day, the streak resets to 0.
+
+--------------------------------------------------------------------------------
+9. DATABASE & PERSISTENCE
+--------------------------------------------------------------------------------
+FitDaily uses a serverless database architecture powered by LibSQL / SQLite:
+
+- Local Development:
+  Automatically creates and writes to a local SQLite database file
+  ("local-fitness.db"). No account or external setup required.
+
+- Vercel Production:
+  Configured with Vercel Serverless Functions in "/api" and "vercel.json".
+  Connects to a cloud database (e.g. Turso / Neon) using two environment
+  variables:
+    TURSO_DATABASE_URL
+    TURSO_AUTH_TOKEN
+
+- Offline Resilience:
+  Data is optimistically updated on screen instantly, synced to the database,
+  and cached in the browser's localStorage for offline support.
+
+--------------------------------------------------------------------------------
+10. LOCAL TESTING INSTRUCTIONS
+--------------------------------------------------------------------------------
+1. Start the development server (runs local backend + Vite concurrently):
+     npm run dev
+
+2. Open your browser to:
+     http://localhost:5173/
+
+3. For a mobile experience:
+     Press F12 (Inspect) -> Press Ctrl+Shift+M (Device toolbar) ->
+     Select iPhone 14/15 or set width to 390px-430px.
+
+--------------------------------------------------------------------------------
+11. VERCEL DEPLOYMENT INSTRUCTIONS
+--------------------------------------------------------------------------------
+1. Push your repository to GitHub / GitLab.
+2. Import the project into Vercel (or run "vercel" in terminal).
+3. Create a free database at https://turso.tech (or via Turso CLI).
+4. In Vercel Project Settings -> Environment Variables, add:
+     TURSO_DATABASE_URL = libsql://your-db-name.turso.io
+     TURSO_AUTH_TOKEN   = your-auth-token
+5. Deploy! Vercel will automatically build the frontend and serve the
+   serverless API with full database persistence.
+
+================================================================================
+                            ENJOY USING FITDAILY!
+================================================================================

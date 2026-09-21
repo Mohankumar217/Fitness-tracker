@@ -1,0 +1,40 @@
+.container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.svg {
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+
+.track {
+  fill: none;
+  stroke: var(--color-border);
+  transition: stroke var(--transition-normal);
+}
+
+.indicator {
+  fill: none;
+  stroke: var(--color-primary);
+  transition: stroke-dashoffset 0.4s cubic-bezier(0.4, 0, 0.2, 1), stroke var(--transition-normal);
+}
+
+.centerLabel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.percentText {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}

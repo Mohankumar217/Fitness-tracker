@@ -1,0 +1,187 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Metrics Grid */
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.metricCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.streakCard {
+  background: linear-gradient(135deg, var(--color-surface) 0%, rgba(249, 115, 22, 0.08) 100%);
+  border-color: rgba(249, 115, 22, 0.2);
+}
+
+.metricIconWrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.flameIcon {
+  color: #f97316;
+}
+
+.trendIcon {
+  color: var(--color-primary);
+}
+
+.checkIcon {
+  color: #3b82f6;
+}
+
+.workoutIcon {
+  color: #a855f7;
+}
+
+.metricContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.metricValue {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  line-height: 1.1;
+}
+
+.metricLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  margin-top: 2px;
+}
+
+/* Chart Card */
+.chartCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.chartHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.chartTitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+.goalTarget {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.chartArea {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 170px;
+  gap: 8px;
+  padding-bottom: var(--space-xs);
+}
+
+.barColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  gap: 6px;
+}
+
+.barPercent {
+  font-size: 0.65rem;
+  color: var(--color-text-tertiary);
+  height: 14px;
+}
+
+.barTrack {
+  flex: 1;
+  width: 100%;
+  max-width: 28px;
+  background-color: var(--color-bg);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.barFill {
+  width: 100%;
+  background-color: var(--color-warning);
+  border-radius: var(--radius-sm);
+  transition: height 0.4s ease;
+  min-height: 0;
+}
+
+.barFillGoal {
+  background-color: var(--color-primary);
+}
+
+.barFillToday {
+  opacity: 0.95;
+}
+
+.barLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.barLabelToday {
+  color: var(--color-primary-dark);
+  font-weight: var(--font-weight-bold);
+}
+
+[data-theme="dark"] .barLabelToday {
+  color: var(--color-primary-light);
+}

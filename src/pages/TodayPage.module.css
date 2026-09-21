@@ -1,0 +1,222 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: var(--space-xs);
+}
+
+.dateRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dateText {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  text-transform: capitalize;
+}
+
+.streakBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background-color: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: #ea580c;
+}
+
+[data-theme="dark"] .streakBadge {
+  background-color: #431407;
+  border-color: #7c2d12;
+  color: #fb923c;
+}
+
+.flameIcon {
+  color: #f97316;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.greeting {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+/* Progress Card */
+.progressCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.progressInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progressTitleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.progressLabel {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+}
+
+.goalAchievedPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background-color: var(--color-primary-bg);
+  color: var(--color-primary-dark);
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-bold);
+}
+
+[data-theme="dark"] .goalAchievedPill {
+  color: var(--color-primary-light);
+}
+
+.progressNumbers {
+  display: flex;
+  align-items: baseline;
+}
+
+.countText {
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+}
+
+.countText strong {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary-dark);
+}
+
+[data-theme="dark"] .countText strong {
+  color: var(--color-primary-light);
+}
+
+.progressBarWrapper {
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: width 0.35s ease;
+}
+
+.ringWrapper {
+  flex-shrink: 0;
+}
+
+/* Activities Section */
+.activitiesSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.sectionTitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+.addBtnSmall {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.addBtnSmall:hover {
+  background-color: var(--color-primary-bg);
+}
+
+.activitiesList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Floating Add Button */
+.floatingAddWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.floatingAddBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 14px 28px;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35);
+  transition: all var(--transition-fast);
+}
+
+.floatingAddBtn:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(34, 197, 94, 0.45);
+}
